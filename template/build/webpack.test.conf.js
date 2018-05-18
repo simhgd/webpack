@@ -22,7 +22,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': import('../config/test.env'),
+      'process.env': require('../config/test.env'),
     }),
   ],
 });

@@ -12,8 +12,8 @@ import OptimizeCSSPlugin from 'optimize-css-assets-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 const env = {{#if_or unit e2e}}process.env.NODE_ENV === 'testing'
-  ? import('../config/test.env')
-  : {{/if_or}}import('../config/prod.env');
+  ? require('../config/test.env')
+  : {{/if_or}}require('../config/prod.env');
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
@@ -111,7 +111,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 });
 
 if (config.build.productionGzip) {
-  const CompressionWebpackPlugin = import('compression-webpack-plugin');
+  const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
@@ -129,7 +129,7 @@ if (config.build.productionGzip) {
 }
 
 if (config.build.bundleAnalyzerReport) {
-  import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+  const BundleAnalyzerPlugin  = require('webpack-bundle-analyzer');
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
