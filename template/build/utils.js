@@ -3,7 +3,7 @@ import config from '../config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import packageConfig from '../package.json';
 
-export const assetsPath = function (_path) {
+const assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory;
@@ -11,7 +11,7 @@ export const assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path);
 };
 
-export const cssLoaders = function (options) {
+const cssLoaders = function (options) {
   options = options || {};
 
   const cssLoader = {
@@ -72,9 +72,9 @@ export const cssLoaders = function (options) {
 };
 
 // Generate loaders for standalone style files (outside of .vue)
-export const styleLoaders = function (options) {
+const styleLoaders = function (options) {
   const output = [];
-  const loaders = _cssLoaders(options);
+  const loaders = cssLoaders(options);
 
   for (const extension in loaders) {
     const loader = loaders[extension];
@@ -87,7 +87,7 @@ export const styleLoaders = function (options) {
   return output;
 };
 
-export const createNotifierCallback = () => {
+const createNotifierCallback = () => {
   const notifier = require('node-notifier');
 
   return (severity, errors) => {
@@ -103,4 +103,11 @@ export const createNotifierCallback = () => {
       icon: path.join(__dirname, 'logo.png'),
     });
   };
+};
+
+export default {
+  assetsPath,
+  cssLoaders,
+  styleLoaders,
+  createNotifierCallback,
 };
