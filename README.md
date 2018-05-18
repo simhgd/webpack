@@ -14,11 +14,11 @@
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
 
 ``` bash
-$ npm install -g vue-cli
-$ vue init webpack my-project
+$ yarn global add vue-cli
+$ yarn vue init simhgd/webpack#webpack-4-es6 my-project
 $ cd my-project
-$ npm install
-$ npm run dev
+$ yarn
+$ yarn dev
 ```
 
 This will scaffold the project using the `master` branch. If you wish to use the latest version of the webpack template, do the following instead:
@@ -33,25 +33,25 @@ The development server will run on port 8080 by default. If that port is already
 
 ## What's Included
 
-- `npm run dev`: first-in-class development experience.
+- `yarn dev`: first-in-class development experience.
   - Webpack + `vue-loader` for single file Vue components.
   - State preserving hot-reload
   - State preserving compilation error overlay
   - Lint-on-save with ESLint
   - Source maps
 
-- `npm run build`: Production ready build.
+- `yarn build`: Production ready build.
   - JavaScript minified with [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
   - Static assets compiled with version hashes for efficient long-term caching, and an auto-generated production `index.html` with proper URLs to these generated assets.
-  - Use `npm run build --report`to build with bundle size analytics.
+  - Use `yarn build --report`to build with bundle size analytics.
 
-- `npm run unit`: Unit tests run in [JSDOM](https://github.com/tmpvar/jsdom) with [Jest](https://facebook.github.io/jest/), or in PhantomJS with Karma + Mocha + karma-webpack.
+- `yarn unit`: Unit tests run in [JSDOM](https://github.com/tmpvar/jsdom) with [Jest](https://facebook.github.io/jest/), or in PhantomJS with Karma + Mocha + karma-webpack.
   - Supports ES2015+ in test files.
   - Easy mocking.
 
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
+- `yarn e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
   - Run tests in multiple browsers in parallel.
   - Works with one command out of the box:
     - Selenium and chromedriver dependencies automatically handled.

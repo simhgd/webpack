@@ -11,7 +11,8 @@
 
 <script>
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'
+//import HelloWorld from './components/HelloWorld'
+const HelloWorld = () => import('@/components/HelloWorld');
 
 {{/unless}}
 export default {
